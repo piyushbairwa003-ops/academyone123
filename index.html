@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rimzim Exchange Fantasy Sports</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+<style>
+.sh7-wrap *{margin:0;padding:0;box-sizing:border-box;}
+.sh7-wrap{
+  font-family:'Poppins',sans-serif;
+  background:#fff;
+  color:#111;
+  line-height:1.6;
+  overflow-x:hidden;
+  width:100%;
+  max-width:100% !important;
+}
+
+/* ── TOP BAR ── */
+.sh7-topbar{
+  background:linear-gradient(90deg,#0a2d6e,#1a56c4,#0a2d6e);
+  text-align:center;
+  padding:10px 16px;
+  font-family:'Oswald',sans-serif;
+  font-size:13px;
+  font-weight:600;
+  color:#ffd700;
+  letter-spacing:1px;
+}
+
+/* ── HERO ── */
+.sh7-hero{
+  background:#fff;
+  text-align:center;
+  padding:56px 20px 48px;
+  position:relative;
+  overflow:hidden;
+}
+.sh7-hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(26,86,196,0.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+/* ── LOGO ── */
+.sh7-logo-wrap{margin-bottom:24px;}
+.sh7-logo-ring{
+  width:150px;height:150px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#eef3ff,#dce8ff);
+  border:3px solid #1a56c4;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  margin:0 auto;
+  box-shadow:0 0 30px rgba(26,86,196,0.25),0 4px 20px rgba(0,0,0,0.08);
+  position:relative;
+  overflow:hidden;
+}
+.sh7-logo-ring img{
+  width:100%;height:100%;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+/* ── HERO TEXT ── */
+.sh7-hero-title{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(34px,8vw,68px);
+  font-weight:700;
+  letter-spacing:3px;
+  color:#111;
+  line-height:1;
+  margin-bottom:6px;
+}
+.sh7-hero-title .sh7-num{color:#1a56c4;}
+.sh7-hero-sub{
+  font-family:'Oswald',sans-serif;
+  font-size:13px;letter-spacing:5px;
+  color:#aaa;margin-bottom:18px;text-transform:uppercase;
+}
+.sh7-hero-desc{
+  color:#555;margin:0 auto 22px;
+}
+.sh7-hero-desc strong{color:#1a56c4;}
+.sh7-trust{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#eef3ff;
+  border:1px solid #1a56c4;
+  border-radius:999px;
+  padding:8px 22px;
+  font-size:14px;font-weight:700;
+  color:#1a56c4;
+  margin-bottom:26px;
+}
+.sh7-btn{
+  display:inline-block;
+  background:linear-gradient(135deg,#1a56c4,#0a2d6e);
+  color:#ffd700!important;
+  padding:15px 42px;
+  border-radius:12px;
+  font-family:'Oswald',sans-serif;
+  font-size:19px;font-weight:600;
+  letter-spacing:2px;
+  text-decoration:none!important;
+  box-shadow:0 6px 20px rgba(26,86,196,0.35);
+  transition:transform 0.2s,box-shadow 0.2s;
+  position:relative;overflow:hidden;
+}
+.sh7-btn::before{
+  content:'';position:absolute;
+  top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
+  transition:left 0.5s;
+}
+.sh7-btn:hover::before{left:100%;}
+.sh7-btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(26,86,196,0.45);}
+
+/* ── SECTION ── */
+.sh7-section{padding:56px 20px;}
+.sh7-section.sh7-bg{background:#f4f7ff;}
+.sh7-container{width:100%;padding:0 40px;}
+.sh7-center{text-align:center;}
+.sh7-label{
+  display:inline-block;
+  background:#dce8ff;border:1px solid #8ab2ef;
+  color:#0a2d6e;font-size:11px;font-weight:700;
+  letter-spacing:3px;padding:5px 14px;border-radius:999px;
+  margin-bottom:12px;
+}
+.sh7-title{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(24px,4vw,36px);font-weight:700;
+  color:#111;margin-bottom:10px;
+}
+.sh7-sub{color:#666;}
+
+/* ── FEATURES GRID ── */
+.sh7-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;margin-top:36px;
+}
+.sh7-card{
+  background:#fff;
+  border:1px solid #d0dff7;
+  border-radius:14px;
+  padding:24px 18px;
+  box-shadow:0 4px 14px rgba(26,86,196,0.06);
+  transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;
+  position:relative;overflow:hidden;
+}
+.sh7-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,#1a56c4,#ffd700);
+  opacity:0;transition:opacity 0.2s;
+}
+.sh7-card:hover{transform:translateY(-5px);border-color:#8ab2ef;box-shadow:0 8px 24px rgba(26,86,196,0.14);}
+.sh7-card:hover::before{opacity:1;}
+.sh7-icon{
+  width:50px;height:50px;
+  background:#dce8ff;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;margin-bottom:14px;
+}
+.sh7-card h4{
+  font-family:'Oswald',sans-serif;
+  font-size:17px;font-weight:600;color:#111;
+  margin-bottom:7px;letter-spacing:0.5px;
+}
+.sh7-card p{color:#666;font-size:13.5px;}
+
+/* ── SPORTS TAGS ── */
+.sh7-tags{
+  display:flex;flex-wrap:wrap;gap:10px;
+  justify-content:center;margin-top:36px;
+}
+.sh7-tag{
+  background:#fff;border:1.5px solid #8ab2ef;
+  border-radius:999px;padding:9px 20px;
+  font-family:'Oswald',sans-serif;font-size:15px;
+  letter-spacing:1px;color:#1a56c4;
+  display:flex;align-items:center;gap:7px;
+  transition:background 0.2s;
+}
+.sh7-tag:hover{background:#dce8ff;}
+
+/* ── STATS ── */
+.sh7-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;width:100%;margin:36px auto;
+}
+.sh7-stat{
+  background:#fff;
+  border:1.5px solid #8ab2ef;
+  border-radius:14px;padding:26px 18px;
+  text-align:center;
+  box-shadow:0 4px 14px rgba(26,86,196,0.1);
+}
+.sh7-stat-num{
+  font-family:'Oswald',sans-serif;
+  font-size:38px;font-weight:700;color:#1a56c4;
+  display:block;
+}
+.sh7-stat-lbl{color:#888;font-size:13px;margin-top:4px;}
+
+/* ── CHECKLIST ── */
+.sh7-box{
+  background:#fff;border:1.5px solid #8ab2ef;
+  border-radius:14px;padding:36px 28px;
+  width:100%;margin:0 auto;text-align:center;
+  box-shadow:0 6px 24px rgba(26,86,196,0.1);
+}
+.sh7-checks{display:grid;gap:11px;margin-top:22px;text-align:left;}
+.sh7-check{
+  display:flex;align-items:center;gap:12px;
+  background:#eef3ff;border:1px solid #c4d8f8;
+  border-radius:10px;padding:12px 16px;
+  font-size:14.5px;color:#333;
+}
+.sh7-check-ic{font-size:17px;flex-shrink:0;}
+
+/* ── CTA ── */
+.sh7-cta{
+  background:linear-gradient(135deg,#0a2d6e,#1a56c4,#0a2d6e);
+  border-top:1.5px solid #8ab2ef;
+  border-bottom:1.5px solid #8ab2ef;
+  text-align:center;padding:56px 20px;
+  position:relative;overflow:hidden;
+}
+.sh7-cta::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 50%,rgba(255,215,0,0.07) 0%,transparent 70%);
+}
+.sh7-cta-title{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(26px,5vw,48px);font-weight:700;
+  color:#fff;margin-bottom:10px;position:relative;
+}
+.sh7-cta-title span{color:#ffd700;}
+.sh7-cta-desc{
+  color:#b8cef5;font-size:15px;
+  margin:0 auto 26px;position:relative;
+}
+.sh7-cta .sh7-btn{
+  background:linear-gradient(135deg,#ffd700,#e6b800);
+  color:#0a2d6e!important;
+  box-shadow:0 6px 20px rgba(255,215,0,0.3);
+}
+.sh7-cta .sh7-btn:hover{box-shadow:0 10px 28px rgba(255,215,0,0.5);}
+
+/* ── DISCLAIMER ── */
+.sh7-disc-wrap{padding:24px 20px;background:#fff;}
+.sh7-disclaimer{
+  background:#eef3ff;border:1px solid #8ab2ef;
+  padding:20px 18px;width:100%;margin:0 auto;
+  border-radius:12px;font-size:13px;color:#1a3a7a;
+  text-align:center;line-height:1.8;
+}
+.sh7-disclaimer strong{color:#0a2d6e;}
+
+/* ── FOOTER ── */
+.sh7-footer{
+  background:#0a2d6e;
+  border-top:1px solid #1a56c4;
+  padding:26px 20px;text-align:center;
+}
+.sh7-footer-brand{
+  font-family:'Oswald',sans-serif;
+  font-size:20px;letter-spacing:3px;color:#ffd700;
+  margin-bottom:14px;
+}
+.sh7-footer-links{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:6px 18px;margin-bottom:14px;
+}
+.sh7-footer-links a{color:#8ab2ef;font-size:13px;text-decoration:none;transition:color 0.2s;}
+.sh7-footer-links a:hover{color:#ffd700;}
+.sh7-copy{color:#4a70b0;font-size:12px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .sh7-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .sh7-topbar{font-size:11px;padding:8px 12px;}
+  .sh7-hero{padding:44px 14px 40px;}
+  .sh7-logo-ring{width:130px;height:130px;}
+  .sh7-btn{padding:13px 28px;font-size:17px;}
+  .sh7-grid{grid-template-columns:1fr;gap:14px;}
+  .sh7-stats{grid-template-columns:1fr;max-width:280px;gap:12px;}
+  .sh7-section{padding:40px 14px;}
+  .sh7-box{padding:24px 16px;}
+  .sh7-tags{gap:8px;}
+  .sh7-tag{font-size:13px;padding:8px 14px;}
+}
+@media(max-width:380px){
+  .sh7-hero-title{font-size:28px;}
+  .sh7-logo-ring{width:110px;height:110px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sh7-wrap">
+
+  <!-- TOP BAR -->
+  <div class="sh7-topbar">🏆 INDIA'S MOST TRUSTED DAILY FANTASY SPORTS PLATFORM — SINCE 2015</div>
+
+  <!-- HERO -->
+  <div class="sh7-hero">
+    <div class="sh7-logo-wrap">
+      <div class="sh7-logo-ring">
+        <img src="https://fantasticczone.site/wp-content/uploads/2026/04/photo_2026-04-30_18-22-10.jpg" alt="Rimzim Exchange Logo" />
+      </div>
+    </div>
+
+    <h1 class="sh7-hero-title"><span class="sh7-num">RIMZIM</span> EXCHANGE</h1>
+    <div class="sh7-hero-sub">SKILL-BASED DAILY FANTASY SPORTS</div>
+
+    <p class="sh7-hero-desc">
+      Experience the thrill of <strong>Free Daily Fantasy Sports</strong> — compete in cricket, football &amp; kabaddi where success comes from <strong>skill, practice &amp; strategy</strong>.
+    </p>
+
+    <div class="sh7-trust">✅ Trusted by <strong>&nbsp;97,000+ Players&nbsp;</strong> Across India</div>
+    <br>
+    <a href="https://wa.link/wrudak" class="sh7-btn">🏆 FREE TO PLAY</a>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="sh7-section sh7-bg sh7-center">
+    <div class="sh7-container">
+      <div class="sh7-label">FEATURES &amp; BENEFITS</div>
+      <h2 class="sh7-title">Why Rimzim Exchange Leads the Race</h2>
+      <p class="sh7-sub" style="margin:0 auto;">Smooth gameplay, transparent rules, and tools that reward skill over luck.</p>
+      <div class="sh7-grid">
+        <div class="sh7-card"><div class="sh7-icon">🎯</div><h4>Skill-First Platform</h4><p>Win based on strategy, research and accurate player selection — not luck.</p></div>
+        <div class="sh7-card"><div class="sh7-icon">🏏</div><h4>Multi-Sport Contests</h4><p>Cricket, football, kabaddi &amp; more — free contests running every day.</p></div>
+        <div class="sh7-card"><div class="sh7-icon">⚡</div><h4>Fast &amp; Smooth</h4><p>Quick team building, instant score updates and live leaderboards 24/7.</p></div>
+        <div class="sh7-card"><div class="sh7-icon">🔒</div><h4>100% Secure</h4><p>Your data and account protected with industry-grade security protocols.</p></div>
+        <div class="sh7-card"><div class="sh7-icon">📊</div><h4>Live Scoring</h4><p>Real-time points from actual match events — fully transparent system.</p></div>
+        <div class="sh7-card"><div class="sh7-icon">🤝</div><h4>Fair &amp; Legal</h4><p>A recognised game of skill — operates under fantasy sports regulations.</p></div>
+      </div>
+      <div class="sh7-tags">
+        <div class="sh7-tag">🏏 Cricket</div>
+        <div class="sh7-tag">⚽ Football</div>
+        <div class="sh7-tag">🤼 Kabaddi</div>
+        <div class="sh7-tag">🏸 Badminton</div>
+        <div class="sh7-tag">🏀 Basketball</div>
+      </div>
+      <div style="margin-top:32px;"><a href="https://wa.link/wrudak" class="sh7-btn">JOIN FREE NOW 🏆</a></div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="sh7-section sh7-center">
+    <div class="sh7-container">
+      <div class="sh7-label">BY THE NUMBERS</div>
+      <h2 class="sh7-title">Trusted. Proven. Since 2015.</h2>
+      <div class="sh7-stats">
+        <div class="sh7-stat"><span class="sh7-stat-num">97K+</span><div class="sh7-stat-lbl">Active Players</div></div>
+        <div class="sh7-stat"><span class="sh7-stat-num">10+</span><div class="sh7-stat-lbl">Years of Trust</div></div>
+        <div class="sh7-stat"><span class="sh7-stat-num">100%</span><div class="sh7-stat-lbl">Free to Play</div></div>
+      </div>
+      <a href="https://wa.link/wrudak" class="sh7-btn">START PLAYING FREE</a>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div class="sh7-section sh7-bg sh7-center">
+    <div class="sh7-container">
+      <div class="sh7-box">
+        <div class="sh7-label">LIVE &amp; AUTHENTIC</div>
+        <h2 class="sh7-title">Points Based on Real Player Performance</h2>
+        <p class="sh7-sub" style="margin:0 auto;">Every run, wicket, tackle &amp; assist converts to fantasy points in real time.</p>
+        <div class="sh7-checks">
+          <div class="sh7-check"><span class="sh7-check-ic">✅</span> Scoring rules published before every contest — full transparency guaranteed</div>
+          <div class="sh7-check"><span class="sh7-check-ic">✅</span> Live sync with official match data within seconds of every real event</div>
+          <div class="sh7-check"><span class="sh7-check-ic">✅</span> Fair &amp; unbiased leaderboard — no favouritism, no manipulation</div>
+          <div class="sh7-check"><span class="sh7-check-ic">✅</span> Official support only via WhatsApp — beware of fraudsters</div>
+        </div>
+        <div style="margin-top:26px;"><a href="https://wa.link/wrudak" class="sh7-btn">PLAY NOW — IT'S FREE 🏆</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <div class="sh7-cta">
+    <h2 class="sh7-cta-title">Ready to Win with <span>Rimzim Exchange</span>?</h2>
+    <p class="sh7-cta-desc">Join 97,000+ skilled players. No entry fee. Pure strategy. Win with your knowledge.</p>
+    <a href="https://wa.link/wrudak" class="sh7-btn" style="font-size:19px;padding:16px 46px;">🏆 START PLAYING FREE</a>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="sh7-disc-wrap">
+    <div class="sh7-disclaimer">
+      ⚠️ <strong>Disclaimer:</strong> This website is only for users aged <strong>18 and above</strong>. If you are from <strong>Telangana, Odisha, Assam, Sikkim, or Nagaland</strong>, please leave the website immediately.<br/><br/>
+      Be aware of fraudsters — <strong>we only deal via WhatsApp</strong>. We only promote Fantasy Sports. <strong>No Real Money Involvement.</strong>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="sh7-footer">
+    <div class="sh7-footer-brand">🏆 RIMZIM EXCHANGE FANTASY SPORTS</div>
+    <div class="sh7-footer-links">
+      <a href="https://fantasticczone.site/privacy-policy-2">Privacy Policy</a>
+      <span style="color:#1a56c4;">|</span>
+      <a href="https://fantasticczone.site/terms-and-condition/">Terms &amp; Conditions</a>
+      <span style="color:#1a56c4;">|</span>
+      <a href="https://fantasticczone.site/games-and-responsibility/">Responsible Gaming</a>
+    </div>
+    <div class="sh7-copy">© 2015–2025 Rimzim Exchange Fantasy Sports. All rights reserved.</div>
+  </div>
+
+</div>
+
+</body>
+</html>
