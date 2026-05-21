@@ -310,6 +310,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MST3KSZB');</script>
 <!-- End Google Tag Manager -->
+
+  <!-- Event snippet for Subscribe (1) conversion page
+
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+
+function gtag_report_conversion(url) {
+
+  var callback = function () {
+
+    if (typeof(url) != 'undefined') {
+
+      window.location = url;
+
+    }
+
+  };
+
+  gtag('event', 'conversion', {
+
+      'send_to': 'AW-18167401974/LhFqCKeC8rAcEPab8tZD',
+
+      'value': 1.0,
+
+      'currency': 'INR',
+
+      'event_callback': callback
+
+  });
+
+  return false;
+
+}
+</script>
+
+ 
 </head>
   
 <body>
